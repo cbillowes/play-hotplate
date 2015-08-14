@@ -1,8 +1,10 @@
-﻿using NUnit.Framework;
+﻿using System.Diagnostics.CodeAnalysis;
+using NUnit.Framework;
 
 namespace HotPlate.Core.Tests
 {
     [TestFixture]
+    [SuppressMessage("ReSharper", "InconsistentNaming")]
     class Cells_other_than_corner_or_center_in_3_by_3_hot_plate_should_initialize_to_50_degrees
     {
         private HotPlate hotPlate;
