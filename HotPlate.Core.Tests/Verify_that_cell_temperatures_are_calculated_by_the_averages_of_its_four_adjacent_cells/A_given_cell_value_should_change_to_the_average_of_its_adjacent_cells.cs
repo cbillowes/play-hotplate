@@ -28,47 +28,56 @@ namespace HotPlate.Core.Tests
         }
 
         [Test]
-        public void Verify_first_cell_in_first_row()
+        public void Verify_first_cell_in_first_row_calculates_average_from_right_and_bottom_cells_only()
         {
             row = 1;
             column = 1;
-            expected = 15;
+            expected = 30f;
             Act_and_assert();
         }
 
         [Test]
-        public void Verify_second_cell_in_first_row()
+        public void Verify_second_cell_in_first_row_calculates_average_from_left_right_and_bottom_cells_only()
         {
             row = 1;
             column = 2;
-            expected = 22.5f;
+            expected = 30f;
             Act_and_assert();
         }
 
         [Test]
-        public void Verify_third_cell_in_first_row()
+        public void Verify_third_cell_in_first_row_calculates_average_from_left_and_bottom_cells_only()
         {
             row = 1;
             column = 3;
-            expected = 20;
+            expected = 40;
             Act_and_assert();
         }
 
         [Test]
-        public void Verify_first_cell_in_second_row()
+        public void Verify_first_cell_in_second_row_calculates_average_from_top_right_and_bottom_cells_only()
         {
             row = 2;
             column = 1;
-            expected = 32.5f;
+            expected = 43.3333321f;
             Act_and_assert();
         }
 
         [Test]
-        public void Verify_third_cell_in_last_row()
+        public void Verify_second_cell_in_second_row_calculates_average_from_top_right_bottom_and_left_cells()
+        {
+            row = 2;
+            column = 2;
+            expected = 50f;
+            Act_and_assert();
+        }
+
+        [Test]
+        public void Verify_third_cell_in_last_row_calculates_average_from_top_and_left_cells_only()
         {
             row = 3;
             column = 3;
-            expected = 35f;
+            expected = 70f;
             Act_and_assert();
         }
 
