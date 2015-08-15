@@ -15,6 +15,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotPlate.Console", "HotPlate.Console\HotPlate.Console.csproj", "{88FB95BA-B20F-4D11-BF99-31DFF94B5DA9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotPlate.WinForms", "HotPlate.WinForms\HotPlate.WinForms.csproj", "{AC4A610B-E222-4659-B376-C3197564C3E6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{88FB95BA-B20F-4D11-BF99-31DFF94B5DA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{88FB95BA-B20F-4D11-BF99-31DFF94B5DA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{88FB95BA-B20F-4D11-BF99-31DFF94B5DA9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC4A610B-E222-4659-B376-C3197564C3E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC4A610B-E222-4659-B376-C3197564C3E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC4A610B-E222-4659-B376-C3197564C3E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC4A610B-E222-4659-B376-C3197564C3E6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
