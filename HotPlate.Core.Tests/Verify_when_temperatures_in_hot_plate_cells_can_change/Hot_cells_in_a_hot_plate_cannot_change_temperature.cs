@@ -1,5 +1,6 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using NUnit.Framework;
+// ReSharper disable CheckNamespace
 
 namespace HotPlate.Core.Tests
 {

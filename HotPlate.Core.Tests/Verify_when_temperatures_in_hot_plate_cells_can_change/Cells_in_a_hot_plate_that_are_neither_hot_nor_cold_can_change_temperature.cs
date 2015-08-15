@@ -1,11 +1,12 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using NUnit.Framework;
+// ReSharper disable CheckNamespace
 
 namespace HotPlate.Core.Tests
 {
     [TestFixture]
     [SuppressMessage("ReSharper", "InconsistentNaming")]
-    class Cells_other_than_corner_or_center_in_hot_plate_can_change_temperature
+    class Only_cells_that_are_not_hot_or_cold_can_change_temperature
     {
         private int size;
         private HotPlate hotPlate;
