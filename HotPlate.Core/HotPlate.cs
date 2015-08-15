@@ -57,14 +57,14 @@
             }
         }
 
-        private int GetInitialCellValue(int row, int column)
+        private float GetInitialCellValue(int row, int column)
         {
             var temperature = Temperatures.Default;
             if (IsCenterCell(row, column))
                 temperature = Temperatures.Highest;
             else if (IsCornerCell(row, column))
                 temperature = Temperatures.Lowest;
-            return (int)temperature;
+            return (float)temperature;
         }
 
         private bool IsCornerCell(int row, int column)
