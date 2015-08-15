@@ -16,6 +16,11 @@
         public int Size;
         public int this[int row, int column] => hotPlate[row, column];
 
+        public bool CanCellValueChange(int row, int column)
+        {
+            return (!IsCornerCell(row, column) && !IsCenterCell(row, column));
+        }
+
         private void Initialize()
         {
             for (var row = 0; row < Size; row++)
