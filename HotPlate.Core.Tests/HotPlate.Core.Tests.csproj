@@ -43,9 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Centermost_cells_in_hot_plate_should_initialize_to_100_degrees.cs" />
-    <Compile Include="Cells_other_than_corner_or_center_in_3_by_3_hot_plate_should_initialize_to_50_degrees.cs" />
-    <Compile Include="Cornermost_cells_in_3_by_3_hot_plate_should_initialize_to_0_degrees.cs" />
+    <Compile Include="Default_temperatures_for_hot_plate_cells\Centermost_cells_in_hot_plate_should_initialize_to_100_degrees.cs" />
+    <Compile Include="Default_temperatures_for_hot_plate_cells\Cells_other_than_corner_or_center_in_3_by_3_hot_plate_should_initialize_to_50_degrees.cs" />
+    <Compile Include="Default_temperatures_for_hot_plate_cells\Cornermost_cells_in_3_by_3_hot_plate_should_initialize_to_0_degrees.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
