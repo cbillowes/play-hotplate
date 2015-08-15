@@ -2,8 +2,8 @@
 {
     public enum Temperatures
     {
-        Highest = 100,
-        Lowest = 0,
-        Default = 50
+        Hot = 100,
+        Cold = 0,
+        Medium = 50
     }
 }

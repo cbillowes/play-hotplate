@@ -59,11 +59,11 @@
 
         private float GetInitialCellValue(int row, int column)
         {
-            var temperature = Temperatures.Default;
+            var temperature = Temperatures.Medium;
             if (IsCenterCell(row, column))
-                temperature = Temperatures.Highest;
+                temperature = Temperatures.Hot;
             else if (IsCornerCell(row, column))
-                temperature = Temperatures.Lowest;
+                temperature = Temperatures.Cold;
             return (float)temperature;
         }
 
