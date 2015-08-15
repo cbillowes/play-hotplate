@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotPlate", "HotPlate\HotPlate.csproj", "{51528FCA-6243-406D-8498-73C9E3C9B64C}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotPlate.Core", "HotPlate.Core\HotPlate.Core.csproj", "{1CA6FA4B-C9CB-48AC-96D1-346B7B8944D9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotPlate.Core.Tests", "HotPlate.Core.Tests\HotPlate.Core.Tests.csproj", "{CB14FC50-F3F6-45B3-A734-46577A2008FC}"
@@ -21,10 +19,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{51528FCA-6243-406D-8498-73C9E3C9B64C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{51528FCA-6243-406D-8498-73C9E3C9B64C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{51528FCA-6243-406D-8498-73C9E3C9B64C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{51528FCA-6243-406D-8498-73C9E3C9B64C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{1CA6FA4B-C9CB-48AC-96D1-346B7B8944D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{1CA6FA4B-C9CB-48AC-96D1-346B7B8944D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1CA6FA4B-C9CB-48AC-96D1-346B7B8944D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
