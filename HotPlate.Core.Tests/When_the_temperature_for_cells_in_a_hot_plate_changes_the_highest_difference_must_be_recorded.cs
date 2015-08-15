@@ -6,7 +6,7 @@ namespace HotPlate.Core.Tests
 {
     [TestFixture]
     [SuppressMessage("ReSharper", "InconsistentNaming")]
-    class When_the_temperature_for_a_hot_plate_changes_the_highest_difference_must_be_recorded
+    class When_the_temperature_for_cells_in_a_hot_plate_changes_the_highest_difference_must_be_recorded
     {
         private const int size = 6;
         private HotPlate hotPlate;
