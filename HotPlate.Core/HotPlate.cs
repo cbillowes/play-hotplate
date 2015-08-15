@@ -1,4 +1,7 @@
-﻿namespace HotPlate.Core
+﻿using System;
+using System.Collections.Generic;
+
+namespace HotPlate.Core
 {
     public class HotPlate
     {
@@ -13,6 +16,7 @@
 
         public int Size;
         public float this[int row, int column] => hotPlate[row, column];
+        public float HighestDiff { get; private set; }
 
         public float[,] Current
         {
@@ -27,7 +31,8 @@
 
         public void NextState(TemperatureCalculator temperatureCalculator)
         {
-            var originalState = Current;
+            HighestDiff = 0;
+            var currentState = Current;
             var nextState = new float[Size, Size];
             for (var row = 0; row < Size; row++)
             {
@@ -35,15 +40,24 @@
                 {
                     if (CanCellValueChange(row, column))
                     {
-                        nextState[row, column] = temperatureCalculator.GetAverage(originalState, row, column);
+                        nextState[row, column] = temperatureCalculator.GetAverage(currentState, row, column);
                     }
                     else
                     {
                         nextState[row, column] = this[row, column];
                     }
+                    HighestDiff = GetHighestDiff(currentState, nextState, row, column);
                 }
             }
             Current = nextState;
+        }
+
+        private float GetHighestDiff(float[,] currentState, float[,] nextState, int row, int column)
+        {
+            var currentValue = currentState[row, column];
+            var nextValue = nextState[row, column];
+            var diff = Math.Abs(currentValue - nextValue);
+            return diff > HighestDiff ? diff : HighestDiff;
         }
 
         private void Initialize()
