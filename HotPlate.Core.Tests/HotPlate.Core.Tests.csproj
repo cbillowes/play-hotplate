@@ -49,6 +49,7 @@
     <Compile Include="Default_temperatures_for_hot_plate_cells\Centermost_cells_in_a_hot_plate_are_hot_and_should_be_100_degrees.cs" />
     <Compile Include="Default_temperatures_for_hot_plate_cells\Cells_in_a_hot_plate_that_are_neither_hot_nor_cold_should_be_50_degrees.cs" />
     <Compile Include="Default_temperatures_for_hot_plate_cells\Cornermost_cells_in_a_hot_plate_are_cold_and_should_be_0_degrees.cs" />
+    <Compile Include="Verify_the_next_state_of_a_hot_plate\The_next_state_of_a_hot_plate_should_change_all_cells_that_are_neither_hot_nor_cold_to_the_average_of_its_four_adjacent_cells.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Verify_when_temperatures_in_hot_plate_cells_can_change\Cold_cells_in_a_hot_plate_cannot_change_temperature.cs" />
   </ItemGroup>

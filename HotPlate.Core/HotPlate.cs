@@ -1,24 +1,49 @@
 ﻿namespace HotPlate.Core
 {
-    //https://gist.github.com/coolaj86/6033171
-    //https://what.thedailywtf.com/t/hot-plate-challenge/48927
     public class HotPlate
     {
-        private readonly int[,] hotPlate;
+        private float[,] hotPlate;
 
         public HotPlate(int size)
         {
             Size = size;
-            hotPlate = hotPlate = new int[size, size];
+            hotPlate = hotPlate = new float[size, size];
             Initialize();
         }
 
         public int Size;
-        public int this[int row, int column] => hotPlate[row, column];
+        public float this[int row, int column] => hotPlate[row, column];
+
+        public float[,] Current
+        {
+            get { return hotPlate; }
+            private set { hotPlate = value; }
+        }
 
         public bool CanCellValueChange(int row, int column)
         {
             return (!IsCornerCell(row, column) && !IsCenterCell(row, column));
+        }
+
+        public void NextState(CellTemperatureCalculator cellTemperatureCalculator)
+        {
+            var originalState = Current;
+            var nextState = new float[Size, Size];
+            for (var row = 0; row < Size; row++)
+            {
+                for (var column = 0; column < Size; column++)
+                {
+                    if (CanCellValueChange(row, column))
+                    {
+                        nextState[row, column] = cellTemperatureCalculator.GetAverage(originalState, row, column);
+                    }
+                    else
+                    {
+                        nextState[row, column] = this[row, column];
+                    }
+                }
+            }
+            Current = nextState;
         }
 
         private void Initialize()

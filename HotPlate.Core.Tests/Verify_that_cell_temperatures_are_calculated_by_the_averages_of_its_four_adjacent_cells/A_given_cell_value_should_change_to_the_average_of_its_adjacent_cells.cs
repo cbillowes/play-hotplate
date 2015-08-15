@@ -8,6 +8,7 @@ namespace HotPlate.Core.Tests
     [SuppressMessage("ReSharper", "InconsistentNaming")]
     class A_given_cell_value_should_change_to_the_average_of_its_four_adjacent_cells
     {
+        private float[,] cells;
         private CellTemperatureCalculator cellTemperatureCalculator;
         private int row;
         private int column;
@@ -17,13 +18,13 @@ namespace HotPlate.Core.Tests
         [SetUp]
         public void Setup()
         {
-            var cells = new float[,]
+            cells = new float[,]
             {
                 {10f, 20f, 30f},
                 {40f, 50f, 60f},
                 {70f, 80f, 90f}
             };
-            cellTemperatureCalculator = new CellTemperatureCalculator(cells);
+            cellTemperatureCalculator = new CellTemperatureCalculator();
         }
 
         [Test]
@@ -73,7 +74,7 @@ namespace HotPlate.Core.Tests
 
         private void Act_and_assert()
         {
-            actual = cellTemperatureCalculator.GetAverage(row - 1, column - 1);
+            actual = cellTemperatureCalculator.GetAverage(cells, row - 1, column - 1);
             Assert.AreEqual(expected, actual);
         }
     }
