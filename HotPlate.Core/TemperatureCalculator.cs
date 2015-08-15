@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace HotPlate.Core
 {
-    public class CellTemperatureCalculator
+    public class TemperatureCalculator
     {
         public float GetAverage(float[,] cells, int row, int column)
         {

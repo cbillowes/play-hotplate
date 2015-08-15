@@ -46,7 +46,7 @@ namespace HotPlate.Console
             for (var i = 0; i < 10; i++)
             {
                 turn = i + 1;
-                var calculator = new CellTemperatureCalculator();
+                var calculator = new TemperatureCalculator();
                 hotPlate.NextState(calculator);
                 backgroundWorker.ReportProgress(0);
                 System.Threading.Thread.Sleep(delay);

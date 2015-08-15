@@ -25,7 +25,7 @@
             return (!IsCornerCell(row, column) && !IsCenterCell(row, column));
         }
 
-        public void NextState(CellTemperatureCalculator cellTemperatureCalculator)
+        public void NextState(TemperatureCalculator temperatureCalculator)
         {
             var originalState = Current;
             var nextState = new float[Size, Size];
@@ -35,7 +35,7 @@
                 {
                     if (CanCellValueChange(row, column))
                     {
-                        nextState[row, column] = cellTemperatureCalculator.GetAverage(originalState, row, column);
+                        nextState[row, column] = temperatureCalculator.GetAverage(originalState, row, column);
                     }
                     else
                     {
