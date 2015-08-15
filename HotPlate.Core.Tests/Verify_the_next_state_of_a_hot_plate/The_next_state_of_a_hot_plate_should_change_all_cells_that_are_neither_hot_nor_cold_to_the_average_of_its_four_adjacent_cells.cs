@@ -1,5 +1,4 @@
-﻿using System;
-using System.Diagnostics.CodeAnalysis;
+﻿using System.Diagnostics.CodeAnalysis;
 using NUnit.Framework;
 
 // ReSharper disable once CheckNamespace
@@ -9,46 +8,45 @@ namespace HotPlate.Core.Tests
     [SuppressMessage("ReSharper", "InconsistentNaming")]
     class The_next_state_of_a_hot_plate_should_change_all_cells_that_are_neither_hot_nor_cold_to_the_average_of_its_four_adjacent_cells
     {
+        private int size;
+        private HotPlate hotPlate;
+        private float[,] expected;
+
         [Test]
         public void Verify_next_state_of_3_by_3_hot_plate()
         {
-            var size = 3;
-            var hotPlate = new HotPlate(size);
-            var cellTemperatureCalculator = new CellTemperatureCalculator();
-            hotPlate.NextState(cellTemperatureCalculator);
-
-            var expected = new float[,]
+            size = 3;
+            expected = new [,]
             {
-                {  0f,  25f,  0f},
-                { 25f, 100f, 25f},
-                {  0f,  25f,  0f}
+                {           0f, 33.3333321f,          0f },
+                {  33.3333321f,        100f, 33.3333321f },
+                {           0f, 33.3333321f,          0f }
             };
-            var actual = hotPlate.Current;
-            Assert.AreEqual(expected, actual);
+            Act_and_assert();
         }
 
         [Test]
-        public void Verify_57th_turn_of_6_by_6_hot_plate()
+        public void Verify_next_state_of_6_by_6_hot_plate()
         {
-            var size = 6;
-            var hotPlate = new HotPlate(size);
-            var cellTemperatureCalculator = new CellTemperatureCalculator();
-            var expected = new float[,]
+            size = 6;
+            expected = new [,]
             {
-                {  0.00f,  33.33f,  49.99f,  49.99f,  33.33f,   0.00f },
-                { 33.33f,  50.00f,  66.66f,  66.66f,  50.00f,  33.33f },
-                { 49.99f,  66.66f, 100.00f, 100.00f,  66.66f,  49.99f },
-                { 49.99f,  66.66f, 100.00f, 100.00f,  66.66f,  49.99f },
-                { 33.33f,  50.00f,  66.66f,  66.66f,  50.00f,  33.33f },
-                {  0.00f,  33.33f,  49.99f,  49.99f,  33.33f,   0.00f }
+                {          0f,   33.3333321f,     50f,   50f, 33.3333321f,           0f },
+                { 33.3333321f,           50f,   62.5f, 62.5f,         50f,  33.3333321f },
+                {         50f,         62.5f,    100f,  100f,       62.5f,          50f },
+                {         50f,         62.5f,    100f,  100f,       62.5f,          50f },
+                { 33.3333321f,           50f,   62.5f, 62.5f,         50f,  33.3333321f },
+                {          0f,   33.3333321f,     50f,   50f, 33.3333321f,           0f }
             };
-            for (int i = 0; i < 1500; i++)
-            {
-                hotPlate.NextState(cellTemperatureCalculator);
-                if (expected == hotPlate.Current)
-                    break;
-            }
-            float[,] actual = hotPlate.Current;
+            Act_and_assert();
+        }
+
+        private void Act_and_assert()
+        {
+            hotPlate = new HotPlate(size);
+            var cellTemperatureCalculator = new TemperatureCalculator();
+            hotPlate.NextState(cellTemperatureCalculator);
+            var actual = hotPlate.Current;
             Assert.AreEqual(expected, actual);
         }
     }
