@@ -1,30 +1,23 @@
 ﻿using System;
-using System.Security.Cryptography;
 
 namespace HotPlate.Core
 {
     public class HotPlate
     {
-        private float[,] hotPlate;
         private readonly AverageTemperatureCalculator averageTemperatureCalculator;
 
         public HotPlate(int size)
         {
             Size = size;
             averageTemperatureCalculator = new AverageTemperatureCalculator();
-            hotPlate = hotPlate = new float[size, size];
+            Current = new float[size, size];
             Initialize();
         }
 
         public int Size;
-        public float this[int row, int column] => hotPlate[row, column];
+        public float this[int row, int column] => Current[row, column];
         public float HighestDiff { get; private set; }
-
-        public float[,] Current
-        {
-            get { return hotPlate; }
-            private set { hotPlate = value; }
-        }
+        public float[,] Current { get; private set; }
 
         public bool CanCellValueChange(int row, int column)
         {
@@ -68,7 +61,7 @@ namespace HotPlate.Core
             {
                 for (var column = 0; column < Size; column++)
                 {
-                    hotPlate[row, column] = GetInitialCellValue(row, column);
+                    Current[row, column] = GetInitialCellValue(row, column);
                 }
             }
         }
