@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace HotPlate.Core
 {
-    public class TemperatureCalculator
+    public class AverageTemperatureCalculator
     {
         private List<float> averages;
         

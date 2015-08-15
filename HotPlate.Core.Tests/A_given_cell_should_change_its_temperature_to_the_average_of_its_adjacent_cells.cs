@@ -9,7 +9,7 @@ namespace HotPlate.Core.Tests
     class A_given_cell_value_should_change_to_the_average_of_its_four_adjacent_cells
     {
         private float[,] cells;
-        private TemperatureCalculator temperatureCalculator;
+        private AverageTemperatureCalculator averageTemperatureCalculator;
         private int row;
         private int column;
         private float actual;
@@ -24,7 +24,7 @@ namespace HotPlate.Core.Tests
                 {40f, 50f, 60f},
                 {70f, 80f, 90f}
             };
-            temperatureCalculator = new TemperatureCalculator();
+            averageTemperatureCalculator = new AverageTemperatureCalculator();
         }
 
         [Test]
@@ -83,7 +83,7 @@ namespace HotPlate.Core.Tests
 
         private void Act_and_assert()
         {
-            actual = temperatureCalculator.GetAverage(cells, row - 1, column - 1);
+            actual = averageTemperatureCalculator.GetAverage(cells, row - 1, column - 1);
             Assert.AreEqual(expected, actual);
         }
     }

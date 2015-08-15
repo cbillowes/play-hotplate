@@ -10,20 +10,18 @@ namespace HotPlate.Core.Tests
     {
         private const int size = 6;
         private HotPlate hotPlate;
-        private TemperatureCalculator calculator;
         private float expected;
 
         [SetUp]
         public void Setup()
         {
             hotPlate = new HotPlate(size);
-            calculator = new TemperatureCalculator();
         }
 
         [Test]
         public void Verify_the_highest_difference_after_the_first_iteration_for_a_6_by_6_hot_plate()
         {
-            hotPlate.NextState(calculator);
+            hotPlate.NextState();
             expected = 16.6666679f;
             Act_and_assert();
         }
@@ -32,8 +30,8 @@ namespace HotPlate.Core.Tests
         public void Verify_the_highest_difference_after_the_second_iteration_for_a_6_by_6_hot_plate()
         {
             
-            hotPlate.NextState(calculator);
-            hotPlate.NextState(calculator);
+            hotPlate.NextState();
+            hotPlate.NextState();
             expected = 3.125f;
             Act_and_assert();
         }

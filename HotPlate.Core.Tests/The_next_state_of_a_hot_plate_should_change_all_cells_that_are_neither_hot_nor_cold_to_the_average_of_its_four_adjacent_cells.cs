@@ -44,8 +44,7 @@ namespace HotPlate.Core.Tests
         private void Act_and_assert()
         {
             hotPlate = new HotPlate(size);
-            var cellTemperatureCalculator = new TemperatureCalculator();
-            hotPlate.NextState(cellTemperatureCalculator);
+            hotPlate.NextState();
             var actual = hotPlate.Current;
             Assert.AreEqual(expected, actual);
         }

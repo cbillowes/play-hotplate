@@ -14,8 +14,7 @@ namespace HotPlate.Console
 
         public void Iterate()
         {
-            var calculator = new TemperatureCalculator();
-            hotPlate.NextState(calculator);
+            hotPlate.NextState();
         }
     }
 }

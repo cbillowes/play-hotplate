@@ -39,7 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="TemperatureCalculator.cs" />
+    <Compile Include="AverageTemperatureCalculator.cs" />
     <Compile Include="Enums.cs" />
     <Compile Include="HotPlate.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

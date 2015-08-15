@@ -1,15 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Security.Cryptography;
 
 namespace HotPlate.Core
 {
     public class HotPlate
     {
         private float[,] hotPlate;
+        private readonly AverageTemperatureCalculator averageTemperatureCalculator;
 
         public HotPlate(int size)
         {
             Size = size;
+            averageTemperatureCalculator = new AverageTemperatureCalculator();
             hotPlate = hotPlate = new float[size, size];
             Initialize();
         }
@@ -29,7 +31,7 @@ namespace HotPlate.Core
             return (!IsCornerCell(row, column) && !IsCenterCell(row, column));
         }
 
-        public void NextState(TemperatureCalculator temperatureCalculator)
+        public void NextState()
         {
             HighestDiff = 0;
             var currentState = Current;
@@ -40,7 +42,7 @@ namespace HotPlate.Core
                 {
                     if (CanCellValueChange(row, column))
                     {
-                        nextState[row, column] = temperatureCalculator.GetAverage(currentState, row, column);
+                        nextState[row, column] = averageTemperatureCalculator.GetAverage(currentState, row, column);
                     }
                     else
                     {
