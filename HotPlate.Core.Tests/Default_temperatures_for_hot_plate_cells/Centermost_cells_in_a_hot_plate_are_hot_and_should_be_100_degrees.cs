@@ -1,11 +1,12 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using NUnit.Framework;
 
+// ReSharper disable CheckNamespace
 namespace HotPlate.Core.Tests
 {
     [TestFixture]
     [SuppressMessage("ReSharper", "InconsistentNaming")]
-    class Centermost_cells_in_hot_plate_should_initialize_to_100_degrees
+    class Centermost_cells_in_a_hot_plate_are_hot_and_should_be_100_degrees
     {
         private HotPlate hotPlate;
         private int size;
